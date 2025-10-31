@@ -4,8 +4,8 @@ import java.util.List;
 
 import domain.PRFunction;
 
-public class ZeroFunction implements PRFunction {
-  public Integer eval(List<Integer> args) {
+public class ZeroFunction extends PRFunction {
+  protected Integer _eval(List<Integer> args) {
     return 0;    
   }
 }

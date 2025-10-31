@@ -4,7 +4,7 @@ import java.util.List;
 
 import domain.PRFunction;
 
-public class ProjectionFunction implements PRFunction {
+public class ProjectionFunction extends PRFunction {
   private final Integer index;
 
   public ProjectionFunction(Integer index) {
@@ -12,7 +12,7 @@ public class ProjectionFunction implements PRFunction {
     this.index = index;
   }
 
-  public Integer eval(List<Integer> args) {
+  protected Integer _eval(List<Integer> args) {
     assert args.size() > index;
     return args.get(index);
   }

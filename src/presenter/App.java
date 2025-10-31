@@ -4,6 +4,7 @@ import java.util.List;
 
 import algorithms.PowFactory;
 import domain.PRFunction;
+import domain.CallController;
 
 public class App {
   public static void main(String[] args) {
@@ -35,8 +36,9 @@ public class App {
       int x = pair[0];
       int y = pair[1];
       try {
+        CallController.reset();
         Integer result = pow.eval(List.of(x, y));
-        System.out.println(String.format("pow(%d, %d) = %d\n", x, y, result));
+        System.out.println(String.format("pow(%d, %d) = %d -- Calls %d\n", x, y, result, CallController.getCalls()));
       } catch (StackOverflowError e) {
         System.err.println(String.format("Stack overflow in pow(%d, %d)", x, y));
         System.err.println(String.format("With stacktrace length = %d\n", e.getStackTrace().length));

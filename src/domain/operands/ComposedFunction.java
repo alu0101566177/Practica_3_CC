@@ -4,7 +4,7 @@ import java.util.List;
 
 import domain.PRFunction;
 
-public class ComposedFunction implements PRFunction {
+public class ComposedFunction extends PRFunction {
   private final PRFunction root;
   private final List<PRFunction> childs;
   
@@ -13,7 +13,7 @@ public class ComposedFunction implements PRFunction {
     this.childs = childs;
   }
 
-  public Integer eval(List<Integer> args) {
+  protected Integer _eval(List<Integer> args) {
     return root.eval(
       childs
         .stream()

@@ -5,7 +5,7 @@ import java.util.List;
 
 import domain.PRFunction;
 
-public class RecursiveFunction implements PRFunction {
+public class RecursiveFunction extends PRFunction {
   private final PRFunction baseCase;
   private final PRFunction recursiveCase;
 
@@ -14,7 +14,7 @@ public class RecursiveFunction implements PRFunction {
     this.recursiveCase = recursiveCase;
   }
 
-  public Integer eval(List<Integer> args) {
+  protected Integer _eval(List<Integer> args) {
     List<Integer> reducedArgs = args.subList(0, args.size() - 1);
     Integer last = args.getLast();
 
